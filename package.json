@@ -1,19 +1,35 @@
 {
-  "name": "hello-world",
+  "name": "react-hello",
   "version": "0.1.0",
   "private": true,
+  "main": "src/electron-starter.js",
   "dependencies": {
     "antd": "^3.2.2",
     "babel-plugin-import": "^1.6.5",
     "react": "^16.2.0",
     "react-app-rewired": "^1.4.1",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "electron": "^1.8.2",
+    "electron-builder": "^20.2.0",
+    "react-scripts": "^1.1.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-darwin-start": "ELECTRON_START_URL=http://localhost:3000 electron .",
+    "electron-build": "build --dir"
+  },
+  "build": {
+    "appId": "com.github.caryyu.react-hello",
+    "win": {
+      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
+    },
+    "directories": {
+      "buildResources": "public"
+    }
   }
 }
